@@ -27,10 +27,11 @@ namespace SuperBall
         public void NextTick()
         {
             Vector3 newDirection = _path.GetNewDirection();
-            SetTickTarget(newDirection);
 
             _playerStats.SetSpeed(newDirection.magnitude);
             _playerStats.AddLockMileage((_startPosition - _endPosition).magnitude);
+
+            SetTickTarget(newDirection);
         }
 
         public void CopyAbilityData(List<Ability> abilityToCopy)
